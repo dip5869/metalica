@@ -1,0 +1,494 @@
+/*======================================*/
+ #save-address input[type="text"]{
+    border: 1px solid #00000030;
+    border-radius: 10px;
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 30%);
+    -moz-box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 30%);
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 30%);
+  }
+   #save-address textarea{
+ border: 1px solid #00000030;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 30%);
+    -moz-box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 30%);
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 30%);
+   }
+
+     .card-number{
+    font-size: 12px;
+  }
+  .card-holder-name{
+    font-size: 14px;
+    font-weight: 600;
+  }
+    .card-box{
+    background-color: rgb(228, 244, 252);
+    padding: 10px;
+    border-radius: 10px;
+    line-height: 10px;
+    margin: 10px;
+  }
+  .aa-card-brand-area .slick-prev {
+    left: -5px!important;
+}
+
+ .aa-card-brand-area .slick-next{
+  right: -5px!important;
+
+}
+#cards-slider .slick-prev {
+    left: -5px!important;
+    top: 50%!important;
+  }
+#cards-slider .slick-next{
+  right: -5px!important;
+   top: 50%!important;
+
+}
+/*============================================================
+==============================================================*/
+.header-user{
+    display: flex; 
+  }
+.header-user li{
+    padding-left: 15px;
+  } 
+.aa-search-box .search-city-input-box{
+    padding: 7px 30px;
+    margin-right: -4px;
+    border: 1px solid #0000003d; 
+    width: 450px;
+  }
+.aa-search-box .search-btn{
+    background-color: #E83E01;
+    padding: 8px 10px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+  }
+.search-form{
+    display: inline-flex; 
+    margin-top: 20px;
+  }
+.brand-logo{
+    padding: 0px 30px;
+  }
+#dropdownMenu2 .dropdown-menu{
+    padding: 14px!important;
+    width: 250px!important;
+    right: 0px!important;
+  }
+.location .dropdown-menu{     
+    right: 0px!important;
+    min-width: 200px;
+    padding: 5px 0;
+  }
+.sidebar-bar{
+    color: #fff;
+  }
+#search-city .dropbtn {
+    background-color: #fff;
+    border: none;
+    color: #333333;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+#search-city .dropbtn:after{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #000 transparent;
+  }
+#search-city .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10000;
+    width: 100%;
+  }
+.dropdown-content select{
+    width: 100%;
+    padding: 5px;
+  }
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+  }
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    color: #000;
+  }
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+.sticky + .content {
+    padding-top: 102px;
+  }
+
+/*====================profile my orders =========================*/
+  .card-footer.text-muted {
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+#card-delivery .card-title{
+  font-size: 22px;
+  margin: 0px;
+}
+#card-delivery{
+  border: 1px solid #00000026;
+  border-radius: 5px;
+}
+#card-delivery .card-header{
+  background-color: #f1f1f1;
+}
+#card-delivery .btn-report{
+  float: right; 
+  margin: 10px;
+  border: 1px solid #E83E01;
+  color: #E83E01;
+}
+#card-delivery .order-placed{
+  text-align: left; 
+  margin-left: 1rem;
+}
+#card-delivery .card-body{
+  padding: 2rem;
+}
+.view-item-txt{
+  color: #E83E01;
+}
+
+
+/*================================view order product css=================================*/
+  .view-order-checkout-left{
+border: 1px solid #00000052;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    overflow-y: scroll;
+    height: 600px;
+     scrollbar-width: none;
+  }
+  .order-header{
+background-color: #f1f1f1;
+    padding: 10px;
+  }
+  .m-10-0{
+margin: 10px 0px;
+  }
+  .order-item-hd1{
+font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0px;
+  }
+
+  /*================================*/
+  .checkout-right-box1{
+  position:relative;overflow:hidden;width:100%;height:auto;min-height:0;max-height:390px;
+}
+.checkout-right-box2{
+ position:relative;overflow:hidden;-webkit-overflow-scrolling:touch;margin-right:0;margin-bottom:0;min-height:0;max-height:390px;margin-left:0;padding-left:0;padding-right:15px;
+}
+
+/*=========================my account cs=========================*/
+.aa-myaccount-login, .aa-myaccount-register{
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+  }
+.aa-myaccount-login:hover, .aa-myaccount-register:hover{
+   -webkit-box-shadow: 0px 0px 16px 1px rgba(201,201,201,1);
+   -moz-box-shadow: 0px 0px 16px 1px rgba(201,201,201,1);
+   box-shadow: 0px 0px 16px 1px rgba(201,201,201,1);
+  }
+
+  /*============cart view=======================*/
+   .product-box-shadow {
+  height: 700px;
+  overflow-y: scroll;
+}
+.product-box-shadow::-webkit-scrollbar {
+  display: none;
+}
+/*========================cart css=========================*/
+/*.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}*/
+
+/*====================================check out page css========================*/
+
+/*===========================footer css=====================*/
+ .site-footer{
+    background: url(../img/footer-img.png) no-repeat bottom center;
+    position: relative;
+    color: #b7bcc8;
+  }
+  footer.site-footer:before {
+    content: "";
+    background: #252932;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/*=========================header page css=============================*/
+  .login-phone {
+    display: inline-block;
+    line-height: normal;
+    margin: 24px auto 0;
+    position: relative;
+}
+.login-phone:after, .login-phone:before {
+    color: #333;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.login-phone:before {
+        content: "\f10b";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-size: 18px;
+    left: 12px;
+}
+.login-phone__input {
+    box-sizing: border-box;
+    font-size: 14px;
+    padding-left: 68px;
+    width: 100%;
+    height: 40px;
+}
+@media screen and (min-width: 1260px){
+.login-phone__input {
+    box-sizing: initial;
+    width: 220px;
+}
+.login-button {
+    width: 300px;
+    height: 40px;
+}
+}
+
+.login-phone:after {
+    content: "+91 - ";
+    font-size: 14px;
+    left: 36px;
+}
+.login-phone:after, .login-phone:before {
+    color: #333;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.btn--gray, .btn:disabled {
+    background-color: #ccc;
+}
+
+  .btn-login-signup{
+        display: inline-block;
+    font-size: 16px;
+    padding: 12px 18px;
+    color: #fff;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    background-color: #E83E01;
+    border: 1px solid #E83E01;
+  }
+  .btn-login-signup:hover, .btn-login-signup:focus {
+    color: #E83E01;
+    background-color: #fff;
+}
+.login-account {
+     background-color: transparent!important;
+    color: #fff!important;
+    cursor: pointer;
+    padding: 8px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .login-account:hover {
+  background-color: transparent;
+}
+
+/*.login-account:after {
+  content: '\f107';
+   font-family: 'FontAwesome';
+  color: #fff;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}*/
+
+.my-account-dropdown {
+     background-color: white;
+    padding: 6px;
+    /* max-height: 0; */
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    position: absolute;
+    left: 0px;
+    top: 67px;
+    right: 0px;
+    margin: auto;
+    /* z-index: 99; */
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(158,158,158,1);
+    -moz-box-shadow: 0px 0px 9px 0px rgba(158,158,158,1);
+    box-shadow: 0px 0px 9px 0px rgba(158,158,158,1);
+}
+.my-account-dropdown li{
+  border-bottom: 1px solid #0000000f;
+  padding: 10px;
+}
+.sign-dropdown-box li{
+ padding: 10px;
+ border-bottom: 1px solid #0000000f;
+}
+
+.login-help {
+    display: block;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+.weight--semibold {
+    font-weight: 600!important;
+}
+.margin-50{
+   margin: 24px auto 0;
+}
+
+   .close-product {
+    float: right;
+    font-size: 25px;
+    line-height: 1;
+    color: #000;
+    filter: alpha(opacity=20);
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+/*===================header css==========================*/
+.top-header-box{
+    background-color: #1C2224; padding: 5px 20px;
+  }
+  .mb-0{
+    margin-bottom: 0px;
+  }
+  .fs-12{
+    font-size: 12px;
+  }
+  /*====================whishlist================*/
+  .whishlist-top-box1{
+  position: relative; background-color: #f1f1f154;
+    padding: 20px;
+}
+
+/*==============================register css=========================*/
+  .aa-myaccount-login, .aa-myaccount-register{
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .aa-myaccount-login:hover, .aa-myaccount-register:hover{
+
+   -webkit-box-shadow: 0px 0px 16px 1px rgba(201,201,201,1);
+   -moz-box-shadow: 0px 0px 16px 1px rgba(201,201,201,1);
+box-shadow: 0px 0px 16px 1px rgba(201,201,201,1);
+  }
+  /*========================profile css==============================*/
+   .add-address-box1{
+            border: 1px dotted #000; padding: 10px;
+          }
+          .mt-10{
+            margin-top: 10px;
+          }
+          .address-card-box2{
+            border: 1px solid #000;
+              border-radius: 5px;
+          }
+          .address-card-header-box2{
+            border-bottom: 1px solid #000;
+          }
+          .p-5{
+            padding: 5px;
+          }
+          .p-10{
+            padding: 10px;
+          }
+          .add-footer-links{
+display: inline-flex; padding: 10px;
+          }
+          .mt-10{
+            margin-top: 10px;
+          }

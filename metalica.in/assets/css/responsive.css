@@ -1,0 +1,74 @@
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+#aa-popular-category .slick-next{
+  top: 0px!important;
+}
+
+#aa-popular-category .slick-prev{
+  top: 0px!important;
+}
+.mega-menu-list {
+    top: 200px;
+}
+/*.slick-prev, .slick-next {
+    top: -20px;
+}*/
+
+#aa-subscribe .aa-subscribe-area .aa-subscribe-form {
+    width: 100%;
+}
+.aa-product-catg li {
+    height: 480px;
+}
+.aa-product-catg li figure .aa-add-card-btn {
+    bottom: -30%;
+}
+.mbt-0{
+	margin-top: 0px;
+}
+
+
+.aa-search-box .search-city-input-box {
+        width: 150px!important;
+       padding: 7px 0px!important;
+    font-size: 12px;
+}
+
+#search-city .dropbtn {
+    font-size: 12px!important;
+    padding: 7px 5px!important;
+}
+#search-city .dropbtn:after {
+    right: 0px;
+    border-width: 6px 4px 0 4px;
+}
+.aa-search-box .search-btn {
+    background-color: #E83E01;
+    padding: 8px 8px!important;
+    font-size: 12px!important;
+}
+#aa-product-brand .aa-product-brand-area .aa-product-brand-slider .slick-prev{
+	left: 30px!important;
+	/*border-radius: 50px!important;*/
+}
+
+
+#aa-product-brand .aa-product-brand-area .aa-product-brand-slider .slick-next{
+	right: 0px!important;
+}
+.aa-card-brand-area .slick-prev, .slick-next {
+    top: 50%!important;
+    border-radius: 0px!important;
+}
+
+.product-featured-slider .aa-popular-slider .slick-initialized .slick-slider{
+    top: 0px!important;
+    right: 35px!important;
+}
+.btn-add-cart {
+    margin: 10px 10px!important;
+}
+.login-phone, .login-button{
+    width: 100%!important;
+}
+}
