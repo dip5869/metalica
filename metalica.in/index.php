@@ -33,7 +33,7 @@
              foreach($run as $c): ?>
             <li>
               <div class="seq-model">
-                <img data-seq src="http://localhost/metalic/admin/banner_images/<?php echo $c['b_image']; ?>" alt="Men slide img" />
+                <img data-seq src="http://localhost/metalica/admin/banner_images/<?php echo $c['b_image']; ?>" alt="Men slide img" />
               </div>
             </li>
                   <?php  endforeach; ?>                
@@ -122,14 +122,19 @@
           <div class="aa-promo-area">
             <div class="row">
               <!-- promo left -->
+
+            
+
+
               <div class="col-md-12 no-padding">                
                 <div class="aa-promo-left">
+
                   <div class="aa-promo-banner">     
                   <?php foreach($run1 as $c): ?>               
-                    <img src="http://localhost/metalic/admin/banner_images/<?php echo $c['b_image']; ?>" alt="img">   
+                    <img src="http://localhost/metalica/admin/banner_images/<?php echo $c['b_image']; ?>" alt="img">   
                     <?php endforeach; ?>                 
                     <div class="aa-prom-content">
-                                         
+                             <h4><a href="#"><?= $c['b_title'];   ?></a></h4>                 
                     </div>
                   </div>
                 </div>
@@ -148,21 +153,61 @@
             <div class="aa-product-area">
               <div class="aa-product-inner">
                  <ul class="nav nav-tabs aa-products-tab">
-                    <li class="active"><a href="#men" data-toggle="tab">Cleaning & Households</a></li>
-                    <li><a href="#women" data-toggle="tab">Daily Essentials</a></li>
-                    <li><a href="#sports" data-toggle="tab">Groceries</a></li>
+                  <?php
+                  error_reporting(0);
+                    include('../connection/dbcon.php');
+
+
+$qry="SELECT * FROM `m_categories` WHERE `c_status`='Active' order by c_id desc ";
+  //echo $qry;die;
+
+
+$run=mysqli_query($con,$qry);
+// echo $row;die;
+
+                 foreach($run as $c)
+                 {
+
+
+                  ?>
+                    <li class="active"><a href="#men" data-toggle="tab"><?= $c['c_name']; ?></a></li>
+                   <?php
+                 }
+                   ?>
+
                   </ul>
                   <div class="tab-content">
                     <div class="tab-pane fade in active" id="men">
                       <ul class="aa-product-catg">
+                        <?php 
+                                          error_reporting(0);
+                    include('../connection/dbcon.php');
+
+
+  $qry="SELECT * FROM `m_product` LEFT JOIN m_categories ON prod_cat_id=c_id WHERE `prod_status`='Active' order by prod_id desc ";
+   //echo $qry;die;
+
+
+ $run=mysqli_query($con,$qry);
+// echo $row;die;
+
+ 
+ $cunt=1;
+                 foreach($run as $c)
+                 { 
+ 
+
+
+
+                        ?>
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="#"><img src="assets/img/ariel.jpg" alt=" shirt img" style="width: 100%;"></a>
+                            <a class="aa-product-img" href="#"><img src="http://localhost/metalica/admin/product_images/<?php echo $c['prod_imageone']?>" alt=" shirt img" style="width: 100%;"></a>
                             <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                               <figcaption style="padding: 5px;"> 
-                              <h4 class="aa-product-title"><a href="#">Ariel Powder</a></h4>
-                              <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                               <button type="button" class="btn btn-warning btn-sm btn-rounded text-center">Buy Now</button>
+                              <h4 class="aa-product-title"><a href="#"><?= $c['prod_name']; ?></a></h4>
+                              <span class="aa-product-price"><?= $c['prod_price']; ?></span><span class="aa-product-price"><del><?= $c['prod_price']; ?></del></span>
+                             
                             </figcaption>
                            
                           </figure>                        
@@ -174,154 +219,16 @@
                               <span class="fa fa-search"></span>
                             </a>                          
                           </div>
-                          <a class="aa-badge aa-sale" href="#">SALE!</a>
+                       <!--    <a class="aa-badge aa-sale" href="#">SALE!</a> -->
                         </li>
-                        <li>
-                          <figure >
-                            <a class="aa-product-img" href="#"><img src="assets/img/surf_excel.jpg" alt=" shirt img" style="width: 100%;"></a>
-                            <a class="aa-add-card-btn" href="#">
-                              <span class="fa fa-shopping-cart"></span>Add To Cart
-                            </a>
-                             <figcaption style="padding: 5px;">
-                              <h4 class="aa-product-title"><a href="#">Surf Excel</a></h4>
-                              <span class="aa-product-price">$45.50</span>
-                               <button type="button" class="btn btn-warning btn-sm btn-rounded text-center">Buy Now</button>
-                            </figcaption>
-                          </figure>                         
-                          <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
-                              <span class="fa fa-heart-o"></span>
-                            </a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal">
-                              <span class="fa fa-search"></span>
-                            </a>
-                          </div>
-                           <a class="aa-badge aa-sold-out" href="#">Sold Out!</a>
-                        </li>
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="#">
-                              <img src="assets/img/tide.jpg" alt=" shirt img" style="width: 100%;">
-                            </a>
-                            <a class="aa-add-card-btn" href="#">
-                              <span class="fa fa-shopping-cart"></span>Add To Cart
-                            </a>
-                             <figcaption style="padding: 5px;">
-                              <h4 class="aa-product-title">
-                                <a href="#">Tide Powder</a>
-                              </h4>
-                              <span class="aa-product-price">$45.50</span>
-                              <span class="aa-product-price"><del>$65.50</del>
-                              </span>
-                                   <button type="button" class="btn btn-warning btn-sm btn-rounded text-center">Buy Now</button>
-                            </figcaption>
-                          </figure>                         
-                          <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
-                              <span class="fa fa-heart-o"></span>
-                            </a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal">
-                              <span class="fa fa-search"></span>
-                            </a>
-                          </div>
-                        </li>
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="#"><img src="assets/img/wheel.jpg" alt=" shirt img" style="width: 100%;"></a>
-                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                            <figcaption style="padding: 5px;">
-                              <h4 class="aa-product-title"><a href="#">Active Wheel Powder</a></h4>
-                              <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                                 <button type="button" class="btn btn-warning btn-sm btn-rounded text-center">Buy Now</button>
-                            </figcaption>
-                          </figure>                          
-                          <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
-                              <span class="fa fa-heart-o"></span>
-                            </a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal">
-                              <span class="fa fa-search"></span>
-                            </a>
-                          </div>
-                          <a class="aa-badge aa-hot" href="#">HOT!</a>
-                        </li>
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="#">
-                                  <img src="assets/img/sunlight.jpg" alt=" shirt img" style="width: 100%;">
-                            </a>
-                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                            <figcaption style="padding: 5px;">
-                              <h4 class="aa-product-title"><a href="#">Sunlight</a></h4>
-                              <span class="aa-product-price">$45.50</span>
-                                <button type="button" class="btn btn-warning btn-sm btn-rounded text-center">Buy Now</button>
-                            </figcaption>
-                          </figure>                          
-                          <div class="aa-product-hvr-content">
-                           <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                          </div>
-                        </li>
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="#">
-                              <img src="assets/img/vanish.jpg" alt=" shirt img" style="width: 100%;">
-                            </a>
-                            <a class="aa-add-card-btn" href="#">
-                              <span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                            <figcaption style="padding: 5px;">
-                              <h4 class="aa-product-title">
-                                <a href="#">Vanish</a>
-                              </h4>
-                              <span class="aa-product-price">$45.50</span>
-                              <span class="aa-product-price"><del>$65.50</del>
-                              </span>
-                                <button type="button" class="btn btn-warning btn-sm btn-rounded text-center" >Buy Now</button>
-                            </figcaption>
-                          </figure>                          
-                          <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
-                              <span class="fa fa-heart-o"></span>
-                            </a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal">
-                              <span class="fa fa-search"></span>
-                            </a>
-                          </div>
-                        </li>
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="#">
-                                <img src="assets/img/tide.jpg" alt=" shirt img" style="width: 100%;">
-                            </a>
-                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                            <figcaption style="padding: 5px;">
-                              <h4 class="aa-product-title"><a href="#">Tide</a></h4>
-                              <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                                <button type="button" class="btn btn-warning btn-sm btn-rounded text-center">Buy Now</button>
-                            </figcaption>
-                          </figure>                          
-                          <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                           <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                          </div>
-                          <a class="aa-badge aa-sale" href="#">SALE!</a>
-                        </li>
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="#"><img src="assets/img/ariel.jpg" alt=" shirt img" style="width: 100%;"></a>
-                            <a class="aa-add-card-btn" href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                            <figcaption style="padding: 5px;">
-                              <h4 class="aa-product-title"><a href="#">Ariel</a></h4>
-                              <span class="aa-product-price">$45.50</span>
-                                <button type="button" class="btn btn-warning btn-sm btn-rounded text-center">Buy Now</button>
-                            </figcaption>
-                          </figure>                         
-                          <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                          </div>
-                           <a class="aa-badge aa-sold-out" href="#">Sold Out!</a>
-                        </li>                        
+                        <?php
+                      }
+                        ?>
+                        
+                        
+                        
+
+                                         
                       </ul>
                       <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
                     </div>
@@ -843,10 +750,12 @@
       <div class="row">
         <div class="col-md-12">        
           <div class="row">
+
             <div class="aa-banner-area">
             <?php  
              foreach($run2 as $c): ?>
-            <a href="#"><img src="http://localhost/metalic/admin/banner_images/<?php echo $c['b_image']; ?>" alt="fashion banner img" style="width: 100%;"></a>
+            <a href="#"><img src="http://localhost/metalica/admin/banner_images/<?php echo $c['b_image']; ?>" alt="fashion banner img" style="width: 100%;"></a>
+
          <?php endforeach; ?> </div>
           </div>
         </div>

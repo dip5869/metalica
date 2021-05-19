@@ -55,6 +55,7 @@
                   <thead>
                   <tr>
                     <th>Sr.No</th>
+                     <th>title</th>
                     <th>image</th>
                     <th>position</th>
                     <th>Status</th>
@@ -74,18 +75,18 @@
 
 
  $run=mysqli_query($con,$qry);
-// echo $row;die;
+ //echo $row;die;
 
  
  $cunt=1;
-                 foreach($run as $c)
-                 {
-
+                 foreach($run as $c):
+                 
                     ?>
                     <tr>
                     <td><?php echo $cunt++ ?></td>
-                    <td>
-
+                     <td><?php echo $c['b_title'] ?></td>
+                 
+                  <td>
                  <img src="banner_images/<?php echo $c['b_image']?>" style="height: 150px; width: 300;">                      
                         
                       </td>
@@ -97,7 +98,7 @@
                     </td>
                   </tr>
                 <?php
-              }
+              endforeach;
                 ?>
                   </tbody>
                  

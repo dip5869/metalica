@@ -77,7 +77,7 @@ $run=mysqli_query($con,$qry);
  
  $cunt=1;
                  foreach($run as $c)
-                 
+                 {
                     ?>
                     <tr>
                     <td><?php echo $cunt++ ?></td>

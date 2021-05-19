@@ -39,6 +39,7 @@ foreach ($run as $row)
 {
  $b_image=$row['b_image'];
  $b_position=$row['b_position']; 
+ $b_title=$row['b_title']; 
 }
 }
  
@@ -46,6 +47,7 @@ foreach ($run as $row)
  {
   $b_image="";
   $b_position="";
+  $b_title="";
  }
 
 
@@ -113,6 +115,15 @@ include('layouts/sidebar.php');
                       <option value="3">3</option>
                   </select>
                   </div>
+
+                    <div class="form-group">
+                    <label for="exampleInput">title</label>
+                    <input required type="text" name="b_title" value="<?php if($b_title!=''){
+
+                      echo $b_title;
+                    } else { echo ''; }?>" class="form-control" id="exampleInputEmail1" placeholder="Enter title">
+                  </div>
+
                 
                   <div class="form-group">
                     <label for="exampleInputFile">image</label>
@@ -161,6 +172,7 @@ if(isset($_POST['submit']))
 {
  
 $Position=$_POST['Position'];
+$b_title=$_POST['b_title'];
 
 
 if($_POST['h_b_image']!="" && $_FILES['b_image']['name']=="")
@@ -192,7 +204,7 @@ if($_GET['b_id']!="")
   
 
   $b_id=$_GET['b_id'];
- $qry="UPDATE `m_banners` SET `b_position`='$Position',`b_image`='$b_image',`b_updatedat`=CURRENT_TIMESTAMP WHERE `b_id`=$b_id";
+ $qry="UPDATE `m_banners` SET `b_position`='$Position',`b_image`='$b_image',`b_title`='$b_title',`b_updatedat`=CURRENT_TIMESTAMP WHERE `b_id`=$b_id";
 
  //echo $qry;die;
 
@@ -222,7 +234,7 @@ else
 
 
 
- $qry="INSERT INTO `m_banners`( `b_image`, `b_position`, `b_status`, `b_createdat`) VALUES ('$b_image','$Position','Active',CURRENT_TIMESTAMP) ";
+ $qry="INSERT INTO `m_banners`( `b_image`,`b_title`, `b_position`, `b_status`, `b_createdat`) VALUES ('$b_image','$b_title','$Position','Active',CURRENT_TIMESTAMP) ";
   //echo $qry;die;
 
 $run=mysqli_query($con,$qry);
