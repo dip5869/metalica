@@ -44,6 +44,9 @@ foreach ($run as $row)
  $prod_imagefive=$row['prod_imagefive'];
  $prod_status=$row['prod_status'];
  $prod_tags=$row['prod_tags'];
+$prod_aprice=$row['prod_aprice'];
+$prod_price=$row['prod_price'];
+ $prod_type=$row['prod_type'];
   $prod_description=$row['prod_description'];
  $prod_name=$row['prod_name'];
  $c_name=$row['c_name'];
@@ -60,6 +63,9 @@ foreach ($run as $row)
  $prod_imagefive="";
  $prod_status="";
  $prod_tags="";
+ $prod_aprice="";
+ $prod_price="";
+ $prod_type="";
   $prod_description="";
  $prod_name="";
  $c_name="";
@@ -160,6 +166,34 @@ $run=mysqli_query($con,$qry);
                         <input type="text" name="prod_tags" value="<?php if($prod_tags!="") { echo $prod_tags; } else { } ?>" class="form-control" id="exampleInputFile" required>                     </div>
                       </div>
               </div>
+
+              <div class="form-group">
+                    <label for="exampleInputFile">Actual price</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="number" name="prod_aprice" value="<?php if($prod_aprice!="") { echo $prod_aprice; } else { } ?>" class="form-control" id="exampleInputFile" required>                     </div>
+                      </div>
+              </div>
+
+
+ <div class="form-group">
+                    <label for="exampleInputFile">price</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="number" name="prod_price" value="<?php if($prod_price!="") { echo $prod_price; } else { } ?>" class="form-control" id="exampleInputFile" required>                     </div>
+                      </div>
+              </div>
+
+               <div class="form-group">
+                    <label for="exampleInputFile">type</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="number" name="prod_type" value="<?php if($prod_type!="") { echo $prod_type; } else { } ?>" class="form-control" id="exampleInputFile" required>                     </div>
+                      </div>
+              </div>
+
+
+
                <div class="form-group">
                     <label for="exampleInputFile">description</label>
                     <div class="input-group">
@@ -271,6 +305,9 @@ if(isset($_POST['submit']))
 $prod_name=$_POST['prod_name'];
 $c_name=$_POST['c_name'];
 $prod_tags=$_POST['prod_tags'];
+$prod_aprice=$_POST['prod_aprice'];
+$prod_price=$_POST['prod_price'];
+ $prod_type=$_POST['prod_type'];
 $prod_description=$_POST['prod_description'];
 
 
@@ -326,7 +363,7 @@ if($_GET['prod_id']!="")
 
   $prod_id=$_GET['prod_id'];
 
- $qry="UPDATE `m_product` SET `prod_name`='$prod_name',`prod_cat_id`='$c_name',`prod_description`='$prod_description',`prod_tags`='$prod_tags',`prod_imageone`='$prod_imageone',`prod_imagetwo`='$prod_imagetwo',`prod_imagethree`='$prod_imagethree',`prod_imagefour`='$prod_imagefour',`prod_imagefive`='$prod_imagefive',`prod_status`='Active',`prod_createdat`=CURRENT_TIMESTAMP WHERE `prod_id`=$prod_id";
+ $qry="UPDATE `m_product` SET `prod_name`='$prod_name',`prod_cat_id`='$c_name',`prod_description`='$prod_description',`prod_tags`='$prod_tags',`prod_aprice`='$prod_aprice',`prod_price`='$prod_price',`prod_type`='$prod_type', `prod_imageone`='$prod_imageone',`prod_imagetwo`='$prod_imagetwo',`prod_imagethree`='$prod_imagethree',`prod_imagefour`='$prod_imagefour',`prod_imagefive`='$prod_imagefive',`prod_status`='Active',`prod_createdat`=CURRENT_TIMESTAMP WHERE `prod_id`=$prod_id";
 
  //echo $qry;die;
 
@@ -356,7 +393,7 @@ else
 
 
 
- $qry="INSERT INTO `m_product`( `prod_name`, `prod_cat_id`, `prod_description`, `prod_tags`, `prod_imageone`, `prod_imagetwo`, `prod_imagethree`, `prod_imagefour`, `prod_imagefive`, `prod_status`, `prod_createdat`) VALUES ('$prod_name','$c_name','$prod_description','$prod_tags','$prod_imageone','$prod_imagetwo','$prod_imagethree','$prod_imagefour','$prod_imagefive','Active',CURRENT_TIMESTAMP) ";
+ $qry="INSERT INTO `m_product`( `prod_name`, `prod_cat_id`, `prod_description`, `prod_tags`,`prod_aprice`,`prod_price`,`prod_type`,`prod_imageone`, `prod_imagetwo`, `prod_imagethree`, `prod_imagefour`, `prod_imagefive`, `prod_status`, `prod_createdat`) VALUES ('$prod_name','$c_name','$prod_description','$prod_tags','$prod_aprice','$prod_price','$prod_type','$prod_imageone','$prod_imagetwo','$prod_imagethree','$prod_imagefour','$prod_imagefive','Active',CURRENT_TIMESTAMP) ";
   //echo $qry;die;
 
 $run=mysqli_query($con,$qry);
