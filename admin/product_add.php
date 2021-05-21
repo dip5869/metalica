@@ -123,7 +123,7 @@ include('layouts/sidebar.php');
                   <select name="c_name" class="form-control" required>
                       <option value="<?php if($c_name!=''){
                       echo $c_name;
-                    } else { echo ''; }?> "><?php if($c_name!=''){
+                    } else { echo ''; } ?>"><?php if($c_name!=''){
                       echo $c_name;
                     } else { echo 'Select category'; }?> </option>
 
@@ -188,10 +188,15 @@ $run=mysqli_query($con,$qry);
                     <label for="exampleInputFile">type</label>
                     <div class="input-group">
                       <div class="custom-file">
-                        <input type="number" name="prod_type" value="<?php if($prod_type!="") { echo $prod_type; } else { } ?>" class="form-control" id="exampleInputFile" required>                     </div>
+                        <select name='prod_type' class='form-control'>
+                          <option value="<?php if($prod_type!="") { echo $prod_type; } else { } ?>"><?php if($prod_type!="") { echo $prod_type; } else { } ?></option>
+                          <option value="POPULAR">POPULAR</option>
+                          <option value="FEATURED">FEATURED</option>
+                          <option value="LATEST">LATEST</option>
+                        </select>
                       </div>
               </div>
-
+</div>
 
 
                <div class="form-group">
@@ -365,7 +370,7 @@ if($_GET['prod_id']!="")
 
  $qry="UPDATE `m_product` SET `prod_name`='$prod_name',`prod_cat_id`='$c_name',`prod_description`='$prod_description',`prod_tags`='$prod_tags',`prod_aprice`='$prod_aprice',`prod_price`='$prod_price',`prod_type`='$prod_type', `prod_imageone`='$prod_imageone',`prod_imagetwo`='$prod_imagetwo',`prod_imagethree`='$prod_imagethree',`prod_imagefour`='$prod_imagefour',`prod_imagefive`='$prod_imagefive',`prod_status`='Active',`prod_createdat`=CURRENT_TIMESTAMP WHERE `prod_id`=$prod_id";
 
- //echo $qry;die;
+ // echo $qry;die;
 
 $run=mysqli_query($con,$qry);
  $num =  mysqli_affected_rows($con);

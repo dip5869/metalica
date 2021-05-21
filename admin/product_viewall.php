@@ -57,6 +57,7 @@
                   <tr>
                     <th>Sr.No</th>
                     <th>product name</th>
+                     <th>product type</th>
                     <th>category</th>
                     <th>image</th>
                     <th>Status</th>
@@ -87,8 +88,10 @@
                     <tr>
                     <td><?php echo $cunt++ ?></td>
                     <td>
-<?php echo $c['prod_name'] ?>
-                
+<?php echo $c['prod_name'] ?>             
+                      </td>
+                       <td>
+<?php echo $c['prod_type'] ?>               
                       </td>
                       <td>
 <?php echo $c['c_name'] ?>
