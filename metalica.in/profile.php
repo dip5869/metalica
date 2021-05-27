@@ -34,32 +34,38 @@
           </div>
           <div class="row">
             <div class="col-sm-12">
+            <?php  
+            error_reporting(0);
+include('../connection/dbcon.php');
+$cust_id = $_SESSION['cust_id'];
+
+$sql = "SELECT * FROM `m_customers` WHERE cust_id = $cust_id";
+$run=mysqli_query($con,$sql);
+
+foreach($run as $r){}
+
+            ?>  
+            <form method="post">
               <div class="row">
                 <div class="col-sm-12" style="position: relative;">
                   <label for="Phone Number">Full Name</label>
-                  <input type="text" name="" placeholder="Enter your name" class="account-text-box">
-                  <a href="#" class="text-danger edit-btn-link">Edit</a>
+                  <input type="text" name="cust_name" value="<?= $r['cust_name'] ?>" placeholder="Enter your name" class="account-text-box" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-12" style="position: relative; margin-top: 15px;">
                   <label for="Email Id">Email Id</label>
-                  <input type="mail" name="" placeholder="Enter your mail details" class="account-text-box">
-                  <a href="#" class="text-danger edit-btn-link">Edit</a>
+                  <input type="mail" name="cust_email" value="<?= $r['cust_email'] ?>" placeholder="Enter your mail details" class="account-text-box" required>
+                  
                 </div>
               </div>
-              <div class="row">
-                <div class="col-sm-12" style="position: relative; margin-top: 15px;">
-                  <label for="Phone Number">Contact Information</label>
-                  <input type="number" name="" placeholder="Enter your contacct number" class="account-text-box">
-                  <a href="#" class="text-danger edit-btn-link">Edit</a>
-                </div>
-              </div>
+             
               <div class="row">
                 <div class="col-sm-12" style="position: relative; margin-top: 20px; margin-bottom: 20px;">
-                  <button type="button" class="btn btn-add-cart" style="border-radius: 50px;">Save Details</button>
+                  <button name="submit" class="btn btn-add-cart" style="border-radius: 50px;">Save Details</button>
                 </div>
               </div>
+              </form>
             </div>
           </div>
         </div>
@@ -482,7 +488,7 @@
                   </div>
                 </div>
               </div>
-              <div class="tabcontent" id="newsletter" style="display: none;">
+              <!-- <div class="tabcontent" id="newsletter" style="display: none;">
                 <div class="row" id="aa-subscribe">
                   <div class="col-md-12">
                     <div class="aa-subscribe-area">
@@ -495,7 +501,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div id="invoice" class="tabcontent" style="display: none;">
                 <div class="row">
                   <div class="col-sm-12">
@@ -838,20 +844,20 @@
                   <div class="" style="padding: 10px 40px;
                   border: 1px solid #f1f1f1;">
                   <img src="assets/img/profile.jpg" style="border-radius: 50%;"> 
-                  <p class="text-center">Hello Aniket</p>
+                  <p class="text-center">Hello <?php echo $_SESSION['cust_name']  ?></p>
                 </div>
                 <div class="aa-sidebar-widget">
                   <div class="tab">
                     <button class="tablinks submenu" onclick="openCity(event, 'account-info')" id="defaultOpen">Account Info
                     </button>
-                    <button class="tablinks submenu" onclick="openCity(event, 'my-orders')">My Orders</button>
+                    <!-- <button class="tablinks submenu" onclick="openCity(event, 'my-orders')">My Orders</button>
                     <button class="tablinks submenu" onclick="openCity(event, 'Whishlist')">My Whishlist</button>
                     <button class="tablinks submenu" onclick="openCity(event, 'newsletter')">News Letter</button>
                     <button class="tablinks submenu" onclick="openCity(event, 'checkout')">Checkout</button>
                     <button class="tablinks submenu" onclick="openCity(event, 'account-form')">My Account</button>
                     <button class="tablinks submenu" onclick="openCity(event, 'address')">Add Address</button>
-                    <button class="tablinks submenu" onclick="openCity(event, 'invoice')">invoice</button>
-                    <button class="tablinks submenu" onclick="openCity(event, 'invoice')">Logout</button>
+                    <button class="tablinks submenu" onclick="openCity(event, 'invoice')">invoice</button> -->
+                    <!-- <a href="logout.php" class="tablinks submenu" onclick="openCity(event, 'invoice')">Logout</a> -->
                   </div>
                 </div>
               </aside>
@@ -859,7 +865,7 @@
           </div>
         </div>   
       </section>
-  <section id="aa-subscribe">
+  <!-- <section id="aa-subscribe">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -874,7 +880,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- ====================modal box======================== -->
   <div class="modal" id="add_address">
     <div class="modal-dialog">
@@ -994,13 +1000,29 @@
     </div>
   </div>
 </div>
- 
+
 <!-- ==========================================================
      ========================================================== -->
          <?php include('footer.php') ?>
 <!-- ==========================================================
-     ==========================================================
+     ==========================================================-->
 
 
+<?php
 
+if(isset($_POST['submit'])){
+  $cust_name = $_POST['cust_name'];
+  $cust_email = $_POST['cust_email'];
+  
+  $qry = "UPDATE `m_customers` SET `cust_name`='$cust_name',`cust_email`='$cust_email' WHERE cust_id = $cust_id";
+  
+  $run=mysqli_query($con,$qry);
+$_SESSION['cust_name'] = $cust_name;
+
+
+}
+
+?>
+
+ 
     
